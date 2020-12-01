@@ -19,11 +19,16 @@ const itemSchema = new mongoose.Schema({
     default: "Indonesia",
   },
   isPopular: {
-    type: boolean,
+    type: Boolean,
+    default: false,
   },
   description: {
     type: String,
     required: true,
+  },
+  categoryId: {
+    type: ObjectId,
+    ref: "Category",
   },
   imageId: [
     {
